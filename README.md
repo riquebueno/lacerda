@@ -1,2 +1,2 @@
 # lacerda
-Protótipo do processador de linguagem natural para consultas aos conceitos de E&amp;P
+Protótipo do processador de linguagem natural baseado em autômatos finitos
