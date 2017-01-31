@@ -276,7 +276,7 @@ public class Teste2 {
 	}
 	
 	public void imprimeSugestoesDeRotaComValores(ArrayList<ItemDeRotaComValores> sugestoesDeRotaComValores){
-		System.out.print("Sugestoes com valores: ");
+		System.out.print("Sugestoes: ");
 		for (int i = 0; i < sugestoesDeRotaComValores.size(); i++) {
 			ItemDeRotaComValores item = sugestoesDeRotaComValores.get(i);
 			System.out.print(item.getValores());
@@ -460,6 +460,7 @@ public class Teste2 {
 		
 		ArrayList<ArrayList<ItemDeRota>> matrizDeRotas = t2.criaMatrizDeRotas();
 		
+		
 		Pergunta pergunta = t2.new Pergunta(new ArrayList<String>(), false);
 		String termoDigitado = "#START";
 		Stack pilha=new Stack<>();//utilizada para memorizar algumas informações durante a execução do fluxo
@@ -503,6 +504,14 @@ public class Teste2 {
 				
 			}
 			else{
+				if(destino==0){
+					System.out.println("Oi!");
+				}
+				else{
+					System.out.println("Sim, estou entendendo ;)");
+				}
+				
+				
 				//atualiza novo erro para permitir a recuperação da pilha caso o usuário erre a sugestão
 				//novoErro=true;
 				
@@ -547,16 +556,16 @@ public class Teste2 {
 			
 			
 			//inicia a preparacao para um novo ciclo
-			System.out.println("Estamos na posição: " + origem);
+			//System.out.println("Estamos na posição: " + origem);
 			
 			//apresenta sugestoes ao usuario
-			t2.imprimeSugestoesDeRota(sugestoesDeRota);
+			//t2.imprimeSugestoesDeRota(sugestoesDeRota);
 			t2.imprimeSugestoesDeRotaComValores(sugestoesDeRotaComValores);
 			
-			System.out.println("Pilha: " + pilha);
+			//System.out.println("Pilha: " + pilha);
 			
-			System.out.println("Pergunta bem formada? " + pergunta.isValidada() + " - " + pergunta.getTexto());
-			System.out.println("Escolha uma sugestão ou sair: ");
+			//System.out.println("Pergunta bem formada? " + pergunta.isValidada() + " - " + pergunta.getTexto());
+			System.out.print("Escolha uma sugestão ou sair: ");
 			termoDigitado = reader.nextLine();
 			System.out.println();
 		}
@@ -564,7 +573,7 @@ public class Teste2 {
 		
 		reader.close();
 		pergunta.getTexto().remove(0);//vou remover o marcador inicial #START
-		System.out.println("------ SAIU ------");
+		//System.out.println("------ SAIU ------");
 		
 		if(pergunta.isValidada()){
 			System.out.println("Você saiu! Sua pergunta está bem formada: " + pergunta.getTexto());
